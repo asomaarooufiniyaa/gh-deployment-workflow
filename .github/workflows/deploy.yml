@@ -5,7 +5,7 @@ on:
     paths:
       - "index.html"   # فقط وقتی index.html تغییر کنه اجرا میشه
     branches:
-      - gh-pages           # فقط روی شاخه main
+      - main           # فقط روی شاخه main
 
 jobs:
   deploy:
