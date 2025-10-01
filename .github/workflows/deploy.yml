@@ -2,10 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    paths:
-      - "index.html"
     branches:
-      - main
+      - main   # ✅ دیگه محدود به index.html نیست
 
 jobs:
   deploy:
