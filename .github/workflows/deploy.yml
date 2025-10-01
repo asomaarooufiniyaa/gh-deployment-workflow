@@ -3,12 +3,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     paths:
-      - "index.html"   # فقط وقتی index.html تغییر کنه اجرا میشه
+      - "index.html"
     branches:
-      - main           # فقط روی شاخه main
+      - main
 
 jobs:
   deploy:
+    if: github.ref == 'refs/heads/main'   # 🔥 جلو لوپ رو می‌گیره
     runs-on: ubuntu-latest
 
     steps:
@@ -19,4 +20,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .   # کل ریپو رو پابلیش میکنه (اینجا index.html توی root هست)
+          publish_dir: .
